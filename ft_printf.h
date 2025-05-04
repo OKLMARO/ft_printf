@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/03 12:13:51 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/04 14:28:12 by oamairi          ###   ########.fr       */
+/*   Created: 2025/05/04 13:59:50 by oamairi           #+#    #+#             */
+/*   Updated: 2025/05/04 14:30:52 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int	ft_printf(const char *str, ...)
-{
-	va_list	list;
-	int		i;
-	
-	va_start(list, str);
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == '%')
-		{
-			if (str[i + 1] == '%')
-				ft_putchar('%');
-			else if (str[i + 1] == 'd')
-				ft_putnbr()
-		}
-	}
-	
-}
+# include <stdarg.h>
+# include <unistd.h>
+
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
+int		ft_printf(const char *str, ...);
+
+#endif
