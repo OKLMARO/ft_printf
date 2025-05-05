@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 14:32:17 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 13:59:25 by oamairi          ###   ########.fr       */
+/*   Created: 2025/05/05 13:57:46 by oamairi           #+#    #+#             */
+/*   Updated: 2025/05/05 13:57:57 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf.h>
 
-void	ft_putstr(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	write(1, s, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i = i + 1;
+	}
+	return (i);
 }

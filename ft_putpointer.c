@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putpointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/04 14:32:17 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 13:59:25 by oamairi          ###   ########.fr       */
+/*   Created: 2025/05/05 14:26:52 by oamairi           #+#    #+#             */
+/*   Updated: 2025/05/05 14:27:12 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-void	ft_putstr(const char *s)
+void	ft_putpointer(void *pointer)
 {
-	write(1, s, ft_strlen(s));
+	
 }
