@@ -6,11 +6,11 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:57:46 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 13:57:57 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/05 23:36:52 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
 
 size_t	ft_strlen(const char *s)
 {

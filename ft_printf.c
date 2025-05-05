@@ -6,7 +6,7 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:51 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 14:27:42 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/05 23:36:28 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	list;
 	int		i;
-	
+
 	va_start(list, str);
 	i = 0;
 	while (str[i])
@@ -32,7 +32,7 @@ int	ft_printf(const char *str, ...)
 			else if (str[i + 1] == 'c')
 				ft_putchar(va_arg(list, char));
 			else if (str[i + 1] == 's')
-				ft_putstr(va_arg(list, char*));
+				ft_putstr(va_arg(list, char *));
 			else if (str[i + 1] == 'x')
 				ft_putnbr_hex(va_arg(list, int));
 			else if (str[i + 1] == 'X')
@@ -40,7 +40,7 @@ int	ft_printf(const char *str, ...)
 			else if (str[i + 1] == 'u')
 				ft_putnbr_unsigned(va_arg(list, unsigned int));
 			else if (str[i + 1] == 'p')
-				ft_putpointer(va_arg(list, void*));
+				ft_putpointer(va_arg(list, void *));
 			i += 2;
 		}
 		else
@@ -49,5 +49,6 @@ int	ft_printf(const char *str, ...)
 			i++;
 		}
 	}
-	
+	va_end(list);
+	return (0);
 }
