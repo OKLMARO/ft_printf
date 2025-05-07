@@ -6,17 +6,17 @@
 #    By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/05 22:34:10 by oamairi           #+#    #+#              #
-#    Updated: 2025/05/05 22:40:32 by oamairi          ###   ########.fr        #
+#    Updated: 2025/05/07 14:13:22 by oamairi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS =		ft_printf.c ft_putnbr.c ft_putpointer.c \
+SRCS =		ft_printf.c ft_putnbr.c \
 			ft_strlen.c ft_putstr.c ft_putchar.c \
 			ft_strdup.c
 
 OBJS = $(SRCS:.c=.o)
 
-NAME = a.out
+NAME = libftprintf.a
 
 RM = rm -f
 

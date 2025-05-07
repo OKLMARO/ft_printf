@@ -6,17 +6,45 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:51 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/07 11:57:27 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 14:36:44 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	printf_pourcent(va_list list, char c)
+{
+	void	*temp;
+
+	if (c == '%')
+		return (ft_putchar('%'));
+	else if (c == 'd' || c == 'i')
+		return (ft_putnbr(va_arg(list, int)));
+	else if (c == 'c')
+		return (ft_putchar(va_arg(list, int)));
+	else if (c == 's')
+		return (ft_putstr(va_arg(list, char *)));
+	else if (c == 'x')
+		return (ft_putnbr_hex(va_arg(list, int)));
+	else if (c == 'X')
+		return (ft_putnbr_hex_upper(va_arg(list, int)));
+	else if (c == 'u')
+		return (ft_putnbr_unsigned(va_arg(list, unsigned int)));
+	else if (c == 'p')
+	{
+		temp = va_arg(list, void *);
+		if (!temp)
+			return (ft_putpointer((unsigned long) temp));
+		return (ft_putstr("0x") + ft_putpointer((unsigned long) temp));
+	}
+	return (0);
+}
+
 int	ft_printf(const char *str, ...)
 {
 	va_list	list;
 	int		i;
-	int count;
+	int		count;
 
 	count = 0;
 	va_start(list, str);
@@ -27,22 +55,7 @@ int	ft_printf(const char *str, ...)
 		{
 			if (!str[i + 1])
 				return (-1);
-			else if (str[i + 1] == '%')
-				count += ft_putchar('%');
-			else if (str[i + 1] == 'd' || str[i + 1] == 'i')
-				count += ft_putnbr(va_arg(list, int));
-			else if (str[i + 1] == 'c')
-				count += ft_putchar(va_arg(list, int));
-			else if (str[i + 1] == 's')
-				count += ft_putstr(va_arg(list, char *));
-			else if (str[i + 1] == 'x')
-				count += ft_putnbr_hex(va_arg(list, int));
-			else if (str[i + 1] == 'X')
-				count += ft_putnbr_hex_upper(va_arg(list, int));
-			else if (str[i + 1] == 'u')
-				count += ft_putnbr_unsigned(va_arg(list, unsigned int));
-			//else if (str[i + 1] == 'p')
-			//	ft_putnbr_hex(va_arg(list, void *));
+			count += printf_pourcent(list, str[i + 1]);
 			i += 2;
 		}
 		else
