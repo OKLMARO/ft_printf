@@ -6,7 +6,7 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 14:19:48 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 23:33:41 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 11:41:27 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	main(int argc, char const *argv[])
 {
-	ft_printf("test %s\n", "de bonjour comment allez vous ?");
+	char *test = "bonjour";
+	ft_printf("test %p\n", test);
+	printf("test %p\n", test);
 	return 0;
 }

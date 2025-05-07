@@ -6,7 +6,7 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:59:50 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 23:38:13 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 11:52:16 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 # include <limits.h>
 # include <stdlib.h>
 
-void	ft_putchar(char c);
-void	ft_putnbr(int nb);
-void	ft_putstr(const char *s);
-int		ft_strlen(const char *s);
-void	ft_putnbr_hex(int nb);
-void	ft_putnbr_hex_upper(int nb);
-void	ft_putnbr_unsigned(unsigned int nb);
-void	ft_putpointer(void *pointer);
+int		ft_putchar(char c);
+int		ft_putnbr(int nb);
+int		ft_putstr(const char *s);
+size_t	ft_strlen(const char *s);
+int		ft_putnbr_hex(int nb);
+int		ft_putnbr_hex_upper(int nb);
+int		ft_putnbr_unsigned(unsigned int nb);
+int		ft_putpointer(void *pointer);
 char	*ft_strdup(const char *s);
 int		ft_printf(const char *str, ...);
 

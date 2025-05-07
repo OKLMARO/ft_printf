@@ -6,13 +6,14 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 14:26:52 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 22:58:18 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 11:45:55 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }

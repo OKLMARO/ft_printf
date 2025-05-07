@@ -6,7 +6,7 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 12:13:51 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 23:36:28 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 11:57:27 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	ft_printf(const char *str, ...)
 {
 	va_list	list;
 	int		i;
+	int count;
 
+	count = 0;
 	va_start(list, str);
 	i = 0;
 	while (str[i])
@@ -26,29 +28,29 @@ int	ft_printf(const char *str, ...)
 			if (!str[i + 1])
 				return (-1);
 			else if (str[i + 1] == '%')
-				ft_putchar('%');
+				count += ft_putchar('%');
 			else if (str[i + 1] == 'd' || str[i + 1] == 'i')
-				ft_putnbr(va_arg(list, int));
+				count += ft_putnbr(va_arg(list, int));
 			else if (str[i + 1] == 'c')
-				ft_putchar(va_arg(list, char));
+				count += ft_putchar(va_arg(list, int));
 			else if (str[i + 1] == 's')
-				ft_putstr(va_arg(list, char *));
+				count += ft_putstr(va_arg(list, char *));
 			else if (str[i + 1] == 'x')
-				ft_putnbr_hex(va_arg(list, int));
+				count += ft_putnbr_hex(va_arg(list, int));
 			else if (str[i + 1] == 'X')
-				ft_putnbr_hex_upper(va_arg(list, int));
+				count += ft_putnbr_hex_upper(va_arg(list, int));
 			else if (str[i + 1] == 'u')
-				ft_putnbr_unsigned(va_arg(list, unsigned int));
-			else if (str[i + 1] == 'p')
-				ft_putpointer(va_arg(list, void *));
+				count += ft_putnbr_unsigned(va_arg(list, unsigned int));
+			//else if (str[i + 1] == 'p')
+			//	ft_putnbr_hex(va_arg(list, void *));
 			i += 2;
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			count += ft_putchar(str[i]);
 			i++;
 		}
 	}
 	va_end(list);
-	return (0);
+	return (count);
 }

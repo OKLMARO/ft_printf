@@ -6,13 +6,14 @@
 /*   By: oamairi <oamairi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 14:32:17 by oamairi           #+#    #+#             */
-/*   Updated: 2025/05/05 23:30:55 by oamairi          ###   ########.fr       */
+/*   Updated: 2025/05/07 11:51:52 by oamairi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(const char *s)
+int	ft_putstr(const char *s)
 {
 	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
 }
